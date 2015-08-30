@@ -31,6 +31,8 @@ if __name__ == '__main__':
             pass  # I surrender. Wait for NTP sync to resume.
 
     # phase 2 - wait for NTP sync (will immediately succeed if synced)
+    # Yes. Chronia will succeed even on syncing with local time. Chronia will then sync local "off" time
+    # because in case of next reboot we need to track the time that has passed, even if we know it may be off
     while True:
         time.sleep(10)
         if time.time() > _BASE_TS:
