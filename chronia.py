@@ -21,6 +21,10 @@ if __name__ == '__main__':
             with open(CONFIG['TIME_DB_FILE'], 'rb') as f:
                 timestamp = float(f.read())
 
+            # we have time, adjust for uptime
+            with open('/proc/uptime', 'r') as f:
+                timestamp += int(f.read().split(' ')[0])
+
             os.system('date -s %s' % (datetime.datetime.fromtimestamp(timestamp).isoformat(),))
         except IOError:
             pass  # I surrender. Wait for NTP sync to resume.
