@@ -11,7 +11,7 @@ to get current time.
 
 Chronia was thought as a NTP supplement service for Raspberry Pi in situations that Pi would spontaneously reboot and, upon
 awakening, discover it was cut off from WAN. Chronia will sync time each interval (default a minute) with the filesystem,
-so that when it wakes up and fails to roll NTP, it will get time from there.
+so that when it wakes up and fails to roll NTP, it will get time from there (correcting for uptime).
 
 When WAN recovers, your system NTP client will synchronize the time properly. Chronia will notice this, and keep trailing
 the proper time.
