@@ -14,9 +14,9 @@ _BASE_TS = 1440937010  # time less than that is considered unsynced
 if __name__ == '__main__':
     # phase 1 - trail time
     for i in xrange(0, CONFIG['STARTUP']):
+        time.sleep(1)
         if time.time() > _BASE_TS:
             break  # time is synced
-        time.sleep(1)
     else:  # time failed to be synced in STARTUP seconds
         try:
             with open(CONFIG['TIME_DB_FILE'], 'rb') as f:
