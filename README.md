@@ -17,3 +17,7 @@ When WAN recovers, your system NTP client will synchronize the time properly. Ch
 the proper time.
 
 tl;dr - use Chronia when you think that time possibly late by some period is better than no time at all.
+
+Recipe
+------
+Just run chronia alongside your NTP client. They will get together nicely.
